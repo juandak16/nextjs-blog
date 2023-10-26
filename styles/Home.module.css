@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.profile {
+  width: 300px;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
