@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/Layout";
 import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData } from "../lib/posts";
+import { PostData, getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/Date";
+import { InferGetStaticPropsType } from "next";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -14,7 +15,9 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout home>
       <Head>
@@ -44,7 +47,7 @@ export default function Home({ allPostsData }) {
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                {date && <Date dateString={date} />}
               </small>
             </li>
           ))}
