@@ -3,7 +3,8 @@
   padding: 20px;
   margin: 0 auto;
   background: white;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .header {

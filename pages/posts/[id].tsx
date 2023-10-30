@@ -34,7 +34,7 @@ const Post = ({ postData }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <h1 className="text-xs">{postData.title}</h1>
         <div className={utilStyles.lightText}>
           {postData.date && <Date dateString={postData.date} />}
         </div>
